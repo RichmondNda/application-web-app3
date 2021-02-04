@@ -63,7 +63,7 @@ class DécèController extends BaseController
             'cause_deces' => $request->cause_deces
         ]);
 
-        // Mail::to($nouveau_deces->email_confirmateur)->send(new HopitalDecesSuccess($nouveau_deces));
+        Mail::to($nouveau_deces->email_confirmateur)->send(new HopitalDecesSuccess($nouveau_deces));
 
         return $this->sendResponse($nouveau_deces->Code_Generer, 'L\'enregistrement a étè effecteur avec succes ');
     }

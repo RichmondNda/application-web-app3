@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\DeclarationNAissanceSuccess;
-use App\Mail\HopitalNaissanceSuccess;
+use App\Mail\NaissanceRegister;
+use App\Mail\NAissanceSuccess;
 use App\Models\CodeDecNais;
 use App\Models\ExtraitNaissance;
 use App\Models\NouveauNee;
@@ -46,7 +46,7 @@ class NouveauNeeController extends BaseController
         }
 
 
-        // Mail::to($request['emailParent'])->send(new HopitalNaissanceSuccess($code));
+        Mail::to($request['emailParent'])->send(new NAissanceSuccess($code));
 
         $nouveau_nee = NouveauNee::create([
             'nom_parent' => $request->nomParent,
@@ -110,7 +110,7 @@ class NouveauNeeController extends BaseController
         $new_nee = NouveauNee::where('Code_Generer', $request->Code_Generer)->OrderBy("created_at", "desc")->first();
 
 
-        ExtraitNaissance::create([
+        $extrait = ExtraitNaissance::create([
             'nom' => $request->nom,
             'prenom' => $request->prenom,
             'date_naissance' => $new_nee->created_at,
@@ -127,10 +127,12 @@ class NouveauNeeController extends BaseController
             'num_cni_mere' => $request->num_cni_mere,
         ]);
 
-        $information['nom'] = $request->nom;
-        $information['prenoms'] = $request->prenoms;
+        $information['nom'] = $extrait->nom;
+        $information['prenoms'] = $extrait->prenoms;
 
-        // Mail::to(auth()->user()->email)->send(new DeclarationNAissanceSuccess($information));
+        $email_send = auth()->user()->email;
+
+        Mail::to($email_send)->send(new NaissanceRegister($information));
 
         CodeDecNais::where(['codeGenerer' => $request->Code_Generer])->update(['status' => 50]);
 

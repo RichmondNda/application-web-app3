@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendQrCodeMAil;
 use App\Models\CodeDecNais;
 use App\Models\RegistreNaissance;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 use NumberFormatter;
 use PDF;
-use Str;
-use Stringable;
 
 class UserController extends Controller
 {
@@ -32,7 +32,7 @@ class UserController extends Controller
 
         $qr_code = base64_encode(QrCode::format('svg')->size(500)->errorCorrection('H')->generate($mot_chiffre));
 
-        // Mail::to(auth()->user()->email)->send(new SendQrCodeMAil($qr_code));
+        Mail::to(auth()->user()->email)->send(new SendQrCodeMAil($qr_code));
     }
 
 
@@ -49,9 +49,13 @@ class UserController extends Controller
 
         $code_a_chiffre = $true_code . '' . $registre->nom;
 
-
         $mot_chiffre = $this->chiffrement($code_a_chiffre);
 
+        $qr_code = base64_encode(QrCode::format('svg')->size(500)->errorCorrection('H')->generate($mot_chiffre));
+
+        Mail::to(auth()->user()->email)->send(new SendQrCodeMAil($qr_code));
+
+        dd('test');
 
         $registre->qr_code = base64_encode(QrCode::format('svg')->size(25)->errorCorrection('H')->generate($mot_chiffre));
 
@@ -407,9 +411,6 @@ class UserController extends Controller
         $dechiffrement_2 =  $this->get_chiffre_lettre($dechiffrement_1, 8);
         $dechiffrement_3 = $this->get_chiffre_lettre($dechiffrement_2, 2);
 
-        // return $chiffrement_3;
-
-        // dd($dechiffrement_3);
 
         return $dechiffrement_3;
     }

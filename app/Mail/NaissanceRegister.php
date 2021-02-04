@@ -7,17 +7,17 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class DeclarationNAissanceSuccess extends Mailable
+class NaissanceRegister extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $information;
-
     /**
      * Create a new message instance.
      *
      * @return void
      */
+
     public function __construct($information)
     {
         $this->information = $information;
@@ -30,6 +30,6 @@ class DeclarationNAissanceSuccess extends Mailable
      */
     public function build()
     {
-        return $this->subjet('Déclaration éffectué avec success (E-soutra)')->view('emails.DeclarationReussit');
+        return $this->subject('Enregistrement Effectuer avec success (E-soutra) ')->markdown('emails.naissanceregister');
     }
 }

@@ -7,20 +7,19 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendQrCodeMAil extends Mailable
+class NAissanceSuccess extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $qr_code;
-
+    public $code;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($qr_code)
+    public function __construct($code)
     {
-        $this->qr_code = $qr_code;
+        $this->code = $code;
     }
 
     /**
@@ -30,6 +29,6 @@ class SendQrCodeMAil extends Mailable
      */
     public function build()
     {
-        return $this->subject('Demande d\'extrait de naissance  ( E-soutra )')->view('emails.HopitalNaissance');
+        return $this->markdown('emails.naissancesuccess');
     }
 }
