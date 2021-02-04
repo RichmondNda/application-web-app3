@@ -52,11 +52,10 @@ class UserController extends Controller
 
         $mot_chiffre = $this->chiffrement($code_a_chiffre);
 
-        $qr_code = base64_encode(QrCode::format('svg')->size(500)->errorCorrection('H')->generate($mot_chiffre));
+        $QRCODE = QrCode::size(500)->generate($code_a_chiffre);
 
-        Mail::to(auth()->user()->email)->send(new NaissancQrcode($qr_code));
+        Mail::to(auth()->user()->email)->send(new NaissancQrcode($QRCODE));
 
-        dd('test');
 
         $registre->qr_code = base64_encode(QrCode::format('svg')->size(25)->errorCorrection('H')->generate($mot_chiffre));
 

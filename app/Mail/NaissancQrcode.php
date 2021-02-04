@@ -30,6 +30,7 @@ class NaissancQrcode extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.naissanceqrcode');
+        return $this->markdown('emails.naissanceqrcode')
+            ->attachData($this->qr_code, 'qr_code');
     }
 }
