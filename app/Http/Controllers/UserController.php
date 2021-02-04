@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NaissancQrcode;
 use App\Mail\SendQrCodeMAil;
 use App\Models\CodeDecNais;
 use App\Models\RegistreNaissance;
@@ -53,7 +54,7 @@ class UserController extends Controller
 
         $qr_code = base64_encode(QrCode::format('svg')->size(500)->errorCorrection('H')->generate($mot_chiffre));
 
-        Mail::to(auth()->user()->email)->send(new SendQrCodeMAil($qr_code));
+        Mail::to(auth()->user()->email)->send(new NaissancQrcode($qr_code));
 
         dd('test');
 
