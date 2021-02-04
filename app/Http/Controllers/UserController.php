@@ -27,16 +27,6 @@ class UserController extends Controller
         return Inertia::render('User/RenExtrait');
     }
 
-    public function QrCodeMail($mot)
-    {
-        $mot_chiffre = $this->chiffrement($mot);
-
-        $qr_code = base64_encode(QrCode::format('svg')->size(500)->errorCorrection('H')->generate($mot_chiffre));
-
-        Mail::to(auth()->user()->email)->send(new SendQrCodeMAil($qr_code));
-    }
-
-
     public function laodPDF($num_acte, $code)
     {
         $true_num_acte = $this->get_chiffre_lettre($num_acte, 7);
@@ -52,12 +42,12 @@ class UserController extends Controller
 
         $mot_chiffre = $this->chiffrement($code_a_chiffre);
 
-        $QRCODE = QrCode::size(500)->generate($code_a_chiffre);
+        $QRCODE = QrCode::size(500)->generate($mot_chiffre);
 
         Mail::to(auth()->user()->email)->send(new NaissancQrcode($QRCODE));
 
 
-        $registre->qr_code = base64_encode(QrCode::format('svg')->size(25)->errorCorrection('H')->generate($mot_chiffre));
+        $registre->qr_code = base64_encode(QrCode::format('svg')->size(50)->errorCorrection('H')->generate($mot_chiffre));
 
 
         // fin de la partie 
