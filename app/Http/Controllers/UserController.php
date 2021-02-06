@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\NaissancQrcode;
 use App\Mail\SendQrCodeMAil;
 use App\Models\CodeDecNais;
+use App\Models\EnregistrementDemande;
 use App\Models\RegistreNaissance;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Http\Request;
@@ -42,9 +43,20 @@ class UserController extends Controller
 
         $mot_chiffre = $this->chiffrement($code_a_chiffre);
 
-        $QRCODE = QrCode::size(500)->generate($mot_chiffre);
+        $QRCODE = QrCode::size(200)->generate($mot_chiffre);
 
         Mail::to(auth()->user()->email)->send(new NaissancQrcode($QRCODE));
+
+        //  enregistrement de la demande pour les verifications 
+
+        EnregistrementDemande::create([
+            'code_qr' => $code_a_chiffre,
+            'num_acte' => $registre->numero_acte,
+            'date_acte' => $registre->date_naissance,
+            'id_user' => auth()->user()->id,
+            'email_user' => auth()->user()->email
+        ]);
+
 
 
         $registre->qr_code = base64_encode(QrCode::format('svg')->size(50)->errorCorrection('H')->generate($mot_chiffre));
@@ -108,6 +120,7 @@ class UserController extends Controller
 
             $registre['numero_acte'] = $num_acte_chiffre;
             $registre['code'] = $this->set_chiffre_lettre($request->code, 7);
+
 
             //  Partie ou on renvoir sur la bonne page 
 
