@@ -56,4 +56,13 @@ Route::post('/declaration-new-deces-code', 'App\Http\Controllers\DécèControlle
 
 # ADMINISTRATIONS UTILISANT NOS SERVICES 
 
+Route::post('Admin-login','App\Http\Controllers\AdministrationPublicController@login');
 Route::get('AdministrationPublic', 'App\Http\Controllers\AdministrationPublicController@index');
+Route::get('Admin-decodeur', 'App\Http\Controllers\AdministrationPublicController@decodeindex')->name('admin.decodeur');
+Route::post('decodeur-extrait', 'App\Http\Controllers\AdministrationPublicController@decodeQrcode');
+ROute::get('AdminPdf/{code}/{numacte}/{date}', 'App\Http\Controllers\AdministrationPublicController@laodUserPdf');
+
+//  Signature 
+
+Route::get('Signature', 'App\Http\Controllers\SignatureController@signature');
+Route::post('ok-signature', 'App\Http\Controllers\SignatureController@ok_signature');

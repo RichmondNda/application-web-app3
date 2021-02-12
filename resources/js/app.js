@@ -9,6 +9,10 @@ Vue.mixin({ methods: { route } });
 Vue.use(InertiaPlugin);
 Vue.use(PortalVue);
 
+import VueSignaturePad from 'vue-signature-pad';
+ 
+Vue.use(VueSignaturePad);
+
 const app = document.getElementById('app');
 
 new Vue({
