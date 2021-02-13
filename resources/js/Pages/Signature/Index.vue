@@ -1,15 +1,15 @@
 <template >
   <div class="bg-gray-300 h-100">
-    <div class=" pt-16 text-center">
-      <span class="text-6xl font-bold text-yellow-400">E</span>
-      <span class="text-6xl  font-bold">-</span>
-      <span class="text-6xl font-bold text-red-700">sign</span>
+    <div class=" pt-4  flex flex-wrap content-between "> 
+      <!-- md:pl-96  md:ml-52 -->
+          <img alt="Soutra logo" class="  h-16 w-32" src="images/SoutraLogo.png">
+  
     </div>
-     <div class="grid  pt-14 pb-36 grid-cols-5">
+     <div class="grid  pt-14 pb-36 grid-cols-7">
 
        <div></div>
 
-       <div class="col-span-3 h-96 p-2  rounded-md shadow-xl bg-yellow-400"> 
+       <div class="col-span-5 md:h-96  sm:h-64 p-2  rounded-md shadow-xl bg-yellow-400"> 
 
           <VueSignaturePad class="bg-gray-50" ref="signaturePad" />
           <div class="m-8 justify-between flex  p-5 mt-8">

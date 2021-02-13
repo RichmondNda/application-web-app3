@@ -126,7 +126,7 @@ class UserController extends Controller
 
             return Inertia::render('User/Payment', ['extrait' => $registre]);
         } else {
-            return redirect()->back()->with('error', 'Les informations saisie sont incorrectes !');
+            return redirect()->back()->with('error', 'Les informations saisies sont incorrectes !');
         }
     }
 
@@ -141,7 +141,7 @@ class UserController extends Controller
             case 1:
                 return 'janvier';
             case 2:
-                return 'fevrier';
+                return 'février';
             case 3:
                 return 'mars';
             case 4:
@@ -153,15 +153,15 @@ class UserController extends Controller
             case 7:
                 return 'juillet';
             case 8:
-                return 'aout';
+                return 'août';
             case 9:
                 return 'septembre';
             case 10:
                 return 'octobre';
             case 11:
-                return 'novmbre';
+                return 'novembre';
             case 12:
-                return 'decembre';
+                return 'décembre';
             default:
                 # code...
                 break;

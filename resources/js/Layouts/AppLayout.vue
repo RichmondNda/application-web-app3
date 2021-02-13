@@ -36,24 +36,24 @@
                                         <template #content>
                                             <!-- Account Management -->
                                             <div class="block px-4 py-2 text-xs text-gray-500">
-                                               Actes de Naissance
+                                               Actes de naissance
                                             </div>
 
                                             <jet-dropdown-link :href="route('see-decl-naiss')">
-                                                Declaration de naissance
+                                                Déclaration de naissance
                                             </jet-dropdown-link>
 
                                             <jet-dropdown-link :href="route('show.newEwtrait')">
-                                                demande d'extrait
+                                                Demande d'extrait
                                             </jet-dropdown-link>
 
                                             <!-- Account Management -->
                                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                                Acte de Déces
+                                                Acte de décès
                                             </div>
 
                                             <jet-dropdown-link :href="route('see-decl-deces')">
-                                                Confirmation de décés
+                                                Confirmation de décès
                                             </jet-dropdown-link>
                                         </template>
                                     </jet-dropdown>

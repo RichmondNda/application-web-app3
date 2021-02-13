@@ -2,7 +2,7 @@
   <app-layout>
     <template #header>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Dasboard
+        Demande d'extrait
       </h2>
     </template>
 
@@ -48,7 +48,7 @@
 
                 <div class="m-2">
                   <span class="text-xl text-gray-800 font-bold justify-start"
-                    >DU</span
+                    >Du</span
                   >
                   <input
                     type="date"
@@ -87,14 +87,13 @@
             </div>
 
             <div class="m-8">
-              la
-              <span class="text-xl font-bold text-yellow-400">
+              
+              <span class="text-2xl font-bold text-red-800">
                 Demande d'extrait</span
               >
-              est Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Doloribus eligendi ipsum necessitatibus animi voluptas, similique
-              ut est labore neque dignissimos facilis eveniet tempora, dolores,
-              possimus saepe nemo quos minima commodi.
+              <br>
+            Pour faire une demande d'extrait, il faut donner le numéro du registre d'extrait et la
+             date d'établissement de celui-ci.
             </div>
           </div>
         </div>

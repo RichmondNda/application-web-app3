@@ -1,11 +1,13 @@
 @component('mail::message')
-# Introduction
+# Demande d'extrait
+Cette image represente votre extrait de naissance numérique.
 
 
-@component('mail::button', ['url' => ''])
+{{-- @component('mail::button', ['url' => ''])
 Button Text
-@endcomponent
+@endcomponent --}}
 
-Thanks,<br>
+Merci.
+<br>
 {{ config('app.name') }}
 @endcomponent

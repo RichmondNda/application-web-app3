@@ -10,13 +10,13 @@
         <div class="py-6">
             <div class=" ">
      
-                    <div class="grid grid-cols-5 gap-4">
+                    <div class="grid grid-cols-5 mt-12  gap-4">
 
-                        <div class="p-6 col-span-2 ">
+                        <div class="p-6 col-span-2 mt-20">
                             <div v-if="show_pdf_dwonloader">
                                 <div class="flex justify-between m-4">
                                     <div class="p-10 text-gray-700">
-                                        <span class="text-xl font-bold ">Telechager votre extrait  -></span>
+                                        <span class="text-xl font-bold ">Télécharger votre extrait  -></span>
                                         <pre>(en cliquant sur l'image)</pre>
                                     </div>
                                     <div class=" h-28 w-28">
@@ -25,11 +25,11 @@
                                 </div>
                             </div>
         
-                            <div class="m-8">
+                            <!-- <div class="m-8">
                                 la 
                                 <span class="text-xl font-bold text-yellow-400"> Demande d'extrait</span> est 
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus eligendi ipsum necessitatibus animi voluptas, similique ut est labore neque dignissimos facilis eveniet tempora, dolores, possimus saepe nemo quos minima commodi.
-                            </div>
+                            </div> -->
                         </div>
 
                     
@@ -37,19 +37,19 @@
 
                             <div class="p-6 pt-6 transform -rotate-1   col-span-2 m-16 bg-white shadow-md rounded-xl  ">
 
-                            <div class="text-xl font-semibold text-center   text-black">Payment de la timbre municipale </div>
+                            <div class="text-xl font-semibold text-center   text-black">Paiement du timbre municipal </div>
                             <!-- formulaire -->
                             <form @submit.prevent="">
                                 <div class="grid grid-cols-2 gap-4">
                                     <div class="m-8">
                                     <span class="text-xl text-gray-800 font-bold justify-start">N° de carte banquaire : </span>
                                         <input type="text"  class="shadow appearance-none border rounded ml-5 w-56 py-2 px-3 text-gray-700
-                                        leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-yellow-100 focus:border-transparent " placeholder="Numero d'extrait de naissance ...">  
+                                        leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-yellow-100 focus:border-transparent " >  
                                 </div>
                                  <div class="m-8">
-                                    <span class="text-xl text-gray-800 font-bold justify-start">N° de télephone : </span>
+                                    <span class="text-xl text-gray-800 font-bold justify-start">N° de téléphone : </span>
                                         <input type="text" class="shadow appearance-none border rounded ml-5 w-56 py-2 px-3 text-gray-700
-                                        leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-yellow-100 focus:border-transparent " placeholder="Numero d'extrait de naissance ...">  
+                                        leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-yellow-100 focus:border-transparent ">  
                                 </div>
                                 </div>
                                 <div class="m-2 flex justify-between pr-6">

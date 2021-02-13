@@ -83,6 +83,17 @@
             border-radius: 50%;
             background: red;
         }
+        #logoDistrict{
+            margin: auto;
+            align-content: center;
+            text-align: center;
+            display: flex;
+            padding-right: 40px ;
+        }
+        #signature{
+            width: 300px;
+            height: 100px;
+        }
     </style>
 </head>
 
@@ -96,10 +107,12 @@
                         {{$registre->lieu_naissance,'dddddddddd'}}</span>
                     <br>
                     <br>
-                    <span id="entete_communune"> COMMUNDE DE {{$registre->lieu_naissance}}</span>
+                    <span id="entete_communune"> COMMUNE DE {{$registre->lieu_naissance}}</span>
                 </p>
 
-                <div id="logo"></div>
+                <div id="logoDistrict">
+                    <img src="images/abidjan_logo.png" alt="">
+                </div>
 
 
             </div>
@@ -165,33 +178,33 @@
             MENTIONS (éventuellement)
         </p>
         <div style="font-size:16px">
-            Marié le {{'...........................................................................' }} à
+            Marié(e) le {{'...........................................................................' }} à
             ...........................................................................
             <br><br>
             avec
             ...............................................................................................................................................................
             <br><br>
-            Marige dissous par decision de divorce en date du
+            Mariage dissous par décision de divorce en date du
             ........................................................................................
             <br><br>
-            Décécé le .................................................. à
+            Décédé(e)  le .................................................. à
             ...............................................................................................
             <br><br>
             Certifie le présent extrait conforme aux indications portées au registre.
         </div>
     </section>
     <section>
-        <div style="width:50%; text-align:center;float:left; margin:40px">
+        {{-- CODE QR A VOIR  --}}
+        {{-- <div style="width:50%; text-align:center;float:left; margin:40px">
             <img src="data:image/png;base64, {!! $registre->qr_code !!}">
-        </div>
-        <div style="width:50%; text-align:center;float:right; margin:40px">
+        </div> --}}
+        <div style="width:50%; text-align:center;float:right; margin:40px; margin-top:10px ">
             <p>
-                Délivrée à {{$registre->lieu_naissance}} , le {{$registre->date_delivrance}}
-                <br>
-
+                Délivré à {{$registre->lieu_naissance}} , le {{$registre->date_delivrance}}
                 <br>
                 <strong> L'Officier de l'Etat civil </strong>
                 <pre> (Signature) </pre>
+                <img id="signature" src="signatures/mairie.png"/>
             </p>
         </div>
     </section>

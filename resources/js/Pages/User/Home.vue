@@ -8,16 +8,14 @@
                 </div>
             </div>
 
-            <div class="mt-8 text-2xl">
-                Bienvenue sur ton tableau de Bord!
+            <div class="mt-8 text-2xl text-center">
+                Bienvenue sur votre tableau de Bord!
                 
             </div>
 
-            <div class="mt-6 text-gray-500">
-                Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-                to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-                you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-                ecosystem to be a breath of fresh air. We hope you love it.
+            <div class="mt-6 text-md text-center text-gray-500">
+                Merci d'avoir choisi notre plate-forme. Vous pouvez suivre l'évolution de  toutes 
+                vos demandes à travers ce tableau ce bord.
             </div>
         </div>
 
@@ -34,11 +32,11 @@
                         <div class="bg-gray-300 rounded-md m-3 h-7 w-full border-1 border-gray-800" >
                             <div class="bg-green-500 rounded-md h-7  text-center text-xl font-bold text-black" :style="'width:'+demande.status+'%'"> {{demande.status+'%'}}  </div>
                         </div>
-                        <p v-if="demande.status==100" class="text-center text-gray-500 font-thin">LA DECLARATION A ETE EFECTUE AVEC SUCCESS</p>
+                        <p v-if="demande.status==100" class="text-center text-gray-500 font-thin">LA DÉCLARATION A ETE EFECTUE AVEC SUCCESS</p>
                         <p v-if="demande.status==25" class="text-center text-gray-500 font-mono">LA PROCHAINE ETAPE EST LA <button class="font-bold text-gray-800" @click.prevent="valDetail(demande.id)">VALIDATION</button></p>
                         <p v-if="demande.status==50" class="text-center text-gray-500 font-light">LA PROCHAINE ETAPE EST LA <button class="font-bold text-gray-800" @click="confDetail(demande.id)">CONFIRMATION A LA MAIRIE</button></p>
                         <div v-if="validation_detail==demande.id && demande.status==25" class="m-3">
-                            <span class="font-semibold text-md text-yellow-400"> Details sur la validation</span>
+                            <span class="font-semibold text-md text-yellow-400"> Détails sur la validation</span>
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eveniet veniam deleniti modi fuga, vel, adipisci voluptate provident laudantium eius ut quod, nulla eaque totam tenetur repudiandae voluptatibus earum quia.
                         </div>
                         <div v-if="demande.status==50 && demande.id==confirmation_detail" class="m-3">
