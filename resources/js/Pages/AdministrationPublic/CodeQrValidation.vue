@@ -12,10 +12,9 @@
             <span class="font-bold text-6xl text-yellow-400"
               >Administration</span
             >
-            est une plateforme dévellopée par des etudiants de l'Ecole Supérieur
-            Africaine des Technologies de l'Information et de la Communication
-            (<span class="font-bold text-red-800">ESATIC</span>) Pour la
-            verification des dossiers administratifs.
+            est une plateforme développée par  des étudiants  de l'Ecole Supérieure Africaine des Technologies 
+                de l'Information et de la Communication (<span class="font-bold text-red-800">ESATIC</span>) Pour la vérification 
+                des dossiers administratifs.
           </div>
           <div
             class="mt-16 mb-3 text-3xl text-center font-bold  text-black"
@@ -28,8 +27,8 @@
           </div>
           <!-- <font-awesome-icon class="text-3xl text-black" icon="plus" ></font-awesome-icon> -->
           <div class="text-center mt-16" v-show="aff_btn">
-            <a class=" bg-gradient-to-r from-red-600 to-red-900 text-xl  text-white font-bold py-4 px-8 rounded-lg
-                                focus:outline-none focus:shadow-outline border border-yellow-900" :href="'AdminPdf/'+user_info.code+'/'+user_info.numero+'/'+user_info.date"  > Telecharcher le Fichier PDF </a>
+            <a target="blank"  class=" bg-gradient-to-r from-red-600 to-red-900 text-xl  text-white font-bold py-4 px-8 rounded-lg
+                                focus:outline-none focus:shadow-outline border border-yellow-900"  :href="'AdminPdf/'+user_info.code+'/'+user_info.numero+'/'+user_info.date"  > Telecharcher le Fichier PDF </a>
     
           </div>
         </div>
@@ -39,9 +38,9 @@
             <div>
               <p class="error">{{ error }}</p>
 
-              <p class="decode-result ">
+              <!-- <p class="decode-result ">
                 Resultat normal: <b>{{ result }}</b>
-              </p>
+              </p> -->
               <div class="rounded-sm">
                 <qrcode-stream @decode="onDecode" @init="onInit" />
               </div>

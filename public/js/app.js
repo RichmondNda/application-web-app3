@@ -3844,7 +3844,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3942,7 +3941,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-//
 //
 //
 //
@@ -35649,6 +35647,7 @@ var render = function() {
                   staticClass:
                     " bg-gradient-to-r from-red-600 to-red-900 text-xl  text-white font-bold py-4 px-8 rounded-lg\n                              focus:outline-none focus:shadow-outline border border-yellow-900",
                   attrs: {
+                    target: "blank",
                     href:
                       "AdminPdf/" +
                       _vm.user_info.code +
@@ -35674,11 +35673,6 @@ var render = function() {
             [
               _c("div", [
                 _c("p", { staticClass: "error" }, [_vm._v(_vm._s(_vm.error))]),
-                _vm._v(" "),
-                _c("p", { staticClass: "decode-result " }, [
-                  _vm._v("\n              Resultat normal: "),
-                  _c("b", [_vm._v(_vm._s(_vm.result))])
-                ]),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -35744,11 +35738,11 @@ var staticRenderFns = [
         _vm._v("Administration")
       ]),
       _vm._v(
-        "\n          est une plateforme dévellopée par des etudiants de l'Ecole Supérieur\n          Africaine des Technologies de l'Information et de la Communication\n          ("
+        "\n          est une plateforme développée par  des étudiants  de l'Ecole Supérieure Africaine des Technologies \n              de l'Information et de la Communication ("
       ),
       _c("span", { staticClass: "font-bold text-red-800" }, [_vm._v("ESATIC")]),
       _vm._v(
-        ") Pour la\n          verification des dossiers administratifs.\n        "
+        ") Pour la vérification \n              des dossiers administratifs.\n        "
       )
     ])
   }
@@ -35781,6 +35775,7 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "col-span-3 p-6" }, [
+          _vm._v("é\n          "),
           _c(
             "div",
             {
@@ -35923,7 +35918,7 @@ var staticRenderFns = [
         ]
       ),
       _vm._v(" "),
-      _c("div", { staticClass: " mt-2 text-black text-center text-md" }, [
+      _c("div", { staticClass: " mt-2 text-black text-center text-xl" }, [
         _c("span", { staticClass: "font-bold text-6xl  text-red-900" }, [
           _vm._v("E")
         ]),
@@ -35936,13 +35931,13 @@ var staticRenderFns = [
           _vm._v("Administration")
         ]),
         _vm._v(
-          " \n              est une plateforme dévellopée par  des etudiants  de l'Ecole Supérieur Africaine des Technologies \n              de l'Information et de la Communication ("
+          " \n              est une plateforme développée par  des étudiants  de l'Ecole Supérieure Africaine des Technologies \n              de l'Information et de la Communication ("
         ),
         _c("span", { staticClass: "font-bold text-red-800" }, [
           _vm._v("ESATIC")
         ]),
         _vm._v(
-          ") Pour la verification \n              des dossiers administratifs.\n\n              \n          "
+          ") Pour la vérification \n              des dossiers administratifs.\n\n              \n          "
         )
       ])
     ])
@@ -40203,9 +40198,11 @@ var render = function() {
                 demande.codeGenerer != "NULL"
                   ? _c("p", { staticClass: "text-xl font-medium" }, [
                       _vm._v(" Code de déclaration : "),
-                      _c("span", { staticClass: "font-bold text-red-700" }, [
-                        _vm._v(_vm._s(demande.codeGenerer))
-                      ])
+                      _c(
+                        "span",
+                        { staticClass: "font-bold text-red-700 select-all" },
+                        [_vm._v(_vm._s(demande.codeGenerer))]
+                      )
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -40232,7 +40229,7 @@ var render = function() {
                   ? _c(
                       "p",
                       { staticClass: "text-center text-gray-500 font-thin" },
-                      [_vm._v("LA DÉCLARATION A ETE EFECTUE AVEC SUCCESS")]
+                      [_vm._v("LA DÉCLARATION A ETE EFFECTUEE AVEC SUCCESS")]
                     )
                   : _vm._e(),
                 _vm._v(" "),
@@ -40285,13 +40282,11 @@ var render = function() {
                   ? _c("div", { staticClass: "m-3" }, [
                       _c(
                         "span",
-                        {
-                          staticClass: "font-semibold text-md text-yellow-400"
-                        },
+                        { staticClass: "font-semibold text-md text-red-800" },
                         [_vm._v(" Détails sur la validation")]
                       ),
                       _vm._v(
-                        "\n                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eveniet veniam deleniti modi fuga, vel, adipisci voluptate provident laudantium eius ut quod, nulla eaque totam tenetur repudiandae voluptatibus earum quia.\n                    "
+                        "\n                        Remplir les informations relatives à l'enfant.\n                    "
                       )
                     ])
                   : _vm._e(),
@@ -40300,13 +40295,11 @@ var render = function() {
                   ? _c("div", { staticClass: "m-3" }, [
                       _c(
                         "span",
-                        {
-                          staticClass: "font-semibold text-md text-yellow-400"
-                        },
+                        { staticClass: "font-semibold text-md text-red-800" },
                         [_vm._v(" Details sur la validation")]
                       ),
                       _vm._v(
-                        "\n                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eveniet veniam deleniti modi fuga, vel, adipisci voluptate provident laudantium eius ut quod, nulla eaque totam tenetur repudiandae voluptatibus earum quia.\n                    "
+                        "\n                        Se rendre à la mairie pour terminer le processus de déclaration.\n                    "
                       )
                     ])
                   : _vm._e()
@@ -41216,7 +41209,7 @@ var staticRenderFns = [
             },
             [
               _vm._v(
-                "\n                          E-soutra est un groupe d'etudiant ayant devellopé une plate-forme appelée soutra-chap-chap qui permet de digitaliser \n                          le processus de déclaration d'extraits de naissance et celui de la numeralisatiobn\n                      "
+                "\n                          E-soutra est un groupe d'étudiant ayant developpé une plate-forme appelée soutra-chap-chap qui permet de digitaliser \n                          le processus de déclaration d'extraits d'actes de naissance et celui de la numéralisation.\n                      "
               )
             ]
           ),

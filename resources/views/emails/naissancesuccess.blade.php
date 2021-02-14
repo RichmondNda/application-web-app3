@@ -1,16 +1,17 @@
 @component('mail::message')
-# FELICITATION
+# FELICITATIONS
 
-<p style="font-size: 16px"> Merci d'etre passer a l'hopitale le code generer est :
+<p style="font-size: 16px"> Chers parents, le code de déclaration est :
+    <br>
     <span style="font-weight: 900; font-size:20px; color:red">
         {{ $code }}
     </span>
 </p>
 
 @component('mail::button', ['url' => ''])
-Button Text
+Prochaine étape
 @endcomponent
 
-Thanks,<br>
+Merci <br>
 {{ config('app.name') }}
 @endcomponent

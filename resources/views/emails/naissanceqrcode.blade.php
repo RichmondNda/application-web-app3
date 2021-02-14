@@ -1,6 +1,6 @@
 @component('mail::message')
 # Demande d'extrait
-Cette image represente votre extrait de naissance numérique.
+Cette image représente votre extrait de naissance numérique.
 
 
 {{-- @component('mail::button', ['url' => ''])

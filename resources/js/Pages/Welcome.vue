@@ -90,8 +90,8 @@
                             <span class="block  text-red-700 xl:inline"> Plate-forme</span>
                         </h1>
                         <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                            E-soutra est un groupe d'etudiant ayant devellopé une plate-forme appelée soutra-chap-chap qui permet de digitaliser 
-                            le processus de déclaration d'extraits de naissance et celui de la numeralisatiobn
+                            E-soutra est un groupe d'étudiant ayant developpé une plate-forme appelée soutra-chap-chap qui permet de digitaliser 
+                            le processus de déclaration d'extraits d'actes de naissance et celui de la numéralisation.
                         </p>
                         <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                             <div class="rounded-md shadow">
@@ -104,7 +104,7 @@
                                 Plus de details
                             </a>
                             </div>
-                        </div>
+                       </div>
                         </div>
                     </main>
                 </div>

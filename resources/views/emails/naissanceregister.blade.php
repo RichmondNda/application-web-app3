@@ -1,25 +1,22 @@
 @component('mail::message')
-# INFORMATION ENREGISTRER
+# INFORMATIONS ENREGISTRER
 <br>
 <br>
 <p>
-    Non de l'enfant :
-    <span class="font-bold text-xl">{{$information['nom']}}</span>
+    Nom de l'enfant :
+    <span style="font-weight: bold; ">{{$information['nom']}}</span>
 </p>
 <p>
-    Prenoms de l'enfant :
-    <span class="font-bold text-xl ">{{$information['prenoms']}}</span>
+    Prénoms de l'enfant :
+    <span style="font-weight: bold; ">{{$information['prenoms']}}</span>
 </p>
 <p class="font-thin">
-    La prochaine etape consite a passer dans la Mairie
-    Pour pouvoir finir la validation
-    et donc vous procurer un document physique .
+    La prochaine étape consiste à se rendre à la Mairie
+    afin de confirmer les informations et valider la déclaration.
+    
 </p>
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
 
-Thanks,<br>
+Merci.<br>
 {{ config('app.name') }}
 @endcomponent

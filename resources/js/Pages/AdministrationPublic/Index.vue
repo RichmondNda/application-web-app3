@@ -6,20 +6,19 @@
             <div class=" mt-10 bg-gray-50 px-5 rounded-xl h-16 w-32 py-4">
                 <img alt="Soutra logo" src="images/SoutraLogo.png">
             </div>
-             <div class=" mt-2 text-black text-center text-md">
+             <div class=" mt-2 text-black text-center text-xl">
                 <span class="font-bold text-6xl  text-red-900">E</span> 
                 <span class="font-bold text-6xl text-black">-</span> 
                 <span class="font-bold text-6xl text-yellow-400">Administration</span> 
-                est une plateforme dévellopée par  des etudiants  de l'Ecole Supérieur Africaine des Technologies 
-                de l'Information et de la Communication (<span class="font-bold text-red-800">ESATIC</span>) Pour la verification 
+                est une plateforme développée par  des étudiants  de l'Ecole Supérieure Africaine des Technologies 
+                de l'Information et de la Communication (<span class="font-bold text-red-800">ESATIC</span>) Pour la vérification 
                 des dossiers administratifs.
 
                 
             </div>
         </div>
 
-        <div class="col-span-3 p-6">
-
+        <div class="col-span-3 p-6">é
             <div class="p-6 m-12 bg-white shadow-md rounded-xl  transform rotate-1">
 
                 <div class="m-2 mb-4 bg-red-100 px-2 py-4 rounded-sm text-center" v-if="$page.props.flash.error">

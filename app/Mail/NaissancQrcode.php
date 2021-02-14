@@ -31,6 +31,7 @@ class NaissancQrcode extends Mailable
     public function build()
     {
         return $this->markdown('emails.naissanceqrcode')
+            ->subject('Demande d\'extrait d\'acte de naissance')
             ->attachData($this->qr_code, 'qr_code.svg');
     }
 }

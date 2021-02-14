@@ -28,20 +28,20 @@
 
                 <div class="ml-12">
                     <div class="mt-2 text-sm text-gray-500">
-                        <p class="text-xl font-medium" v-if="demande.codeGenerer!='NULL'"> Code de déclaration : <span class="font-bold text-red-700">{{demande.codeGenerer}}</span> </p>
+                        <p class="text-xl font-medium" v-if="demande.codeGenerer!='NULL'"> Code de déclaration : <span class="font-bold text-red-700 select-all">{{demande.codeGenerer}}</span> </p>
                         <div class="bg-gray-300 rounded-md m-3 h-7 w-full border-1 border-gray-800" >
                             <div class="bg-green-500 rounded-md h-7  text-center text-xl font-bold text-black" :style="'width:'+demande.status+'%'"> {{demande.status+'%'}}  </div>
                         </div>
-                        <p v-if="demande.status==100" class="text-center text-gray-500 font-thin">LA DÉCLARATION A ETE EFECTUE AVEC SUCCESS</p>
+                        <p v-if="demande.status==100" class="text-center text-gray-500 font-thin">LA DÉCLARATION A ETE EFFECTUEE AVEC SUCCESS</p>
                         <p v-if="demande.status==25" class="text-center text-gray-500 font-mono">LA PROCHAINE ETAPE EST LA <button class="font-bold text-gray-800" @click.prevent="valDetail(demande.id)">VALIDATION</button></p>
                         <p v-if="demande.status==50" class="text-center text-gray-500 font-light">LA PROCHAINE ETAPE EST LA <button class="font-bold text-gray-800" @click="confDetail(demande.id)">CONFIRMATION A LA MAIRIE</button></p>
                         <div v-if="validation_detail==demande.id && demande.status==25" class="m-3">
-                            <span class="font-semibold text-md text-yellow-400"> Détails sur la validation</span>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eveniet veniam deleniti modi fuga, vel, adipisci voluptate provident laudantium eius ut quod, nulla eaque totam tenetur repudiandae voluptatibus earum quia.
+                            <span class="font-semibold text-md text-red-800"> Détails sur la validation</span>
+                            Remplir les informations relatives à l'enfant.
                         </div>
                         <div v-if="demande.status==50 && demande.id==confirmation_detail" class="m-3">
-                            <span class="font-semibold text-md text-yellow-400"> Details sur la validation</span>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eveniet veniam deleniti modi fuga, vel, adipisci voluptate provident laudantium eius ut quod, nulla eaque totam tenetur repudiandae voluptatibus earum quia.
+                            <span class="font-semibold text-md text-red-800"> Details sur la validation</span>
+                            Se rendre à la mairie pour terminer le processus de déclaration.
                         </div>
                     </div>
                 </div>

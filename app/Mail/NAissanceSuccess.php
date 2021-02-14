@@ -29,6 +29,8 @@ class NAissanceSuccess extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.naissancesuccess');
+        return $this->
+            subject('Code de déclaration')
+            ->markdown('emails.naissancesuccess');
     }
 }

@@ -128,7 +128,7 @@ class NouveauNeeController extends BaseController
         ]);
 
         $information['nom'] = $extrait->nom;
-        $information['prenoms'] = $extrait->prenoms;
+        $information['prenoms'] = $extrait->prenom;
 
         $email_send = auth()->user()->email;
 
