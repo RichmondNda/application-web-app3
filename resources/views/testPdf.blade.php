@@ -177,18 +177,53 @@
         <p style="text-align: center; font-size:24px; font-weight:bold; font-family:'Times New Roman', Times, serif ">
             MENTIONS (éventuellement)
         </p>
-        <div style="font-size:16px">
-            Marié(e) le {{'...........................................................................' }} à
+        <div style="font-size:16px ; text-align:center">
+            
+            Marié(e) le 
+            @if($registre->date_mariage)
+                {{$registre->date_mariage}}
+            @else
             ...........................................................................
+            @endif
+            à
+            @if($registre->lieu_mariage)
+                {{$registre->lieu_mariage}}
+            @else
+            ...........................................................................
+            @endif
+            
             <br><br>
             avec
-            ...............................................................................................................................................................
+            @if($registre->nom_conjoint)
+                {{$registre->nom_conjoint}}
+            @else
+            ....................................................................
+            @endif
+            à
+            @if($registre->prenom_conjoint)
+                {{$registre->prenom_conjoint}}
+            @else
+            .................................................................
+            @endif
+            
             <br><br>
             Mariage dissous par décision de divorce en date du
             ........................................................................................
             <br><br>
-            Décédé(e)  le .................................................. à
-            ...............................................................................................
+            Décédé(e)  le 
+
+            @if($registre->date_deces)
+                {{$registre->date_deces}}
+            @else
+            .............................................
+            @endif
+             
+            à
+            @if($registre->lieu_deces)
+                {{$registre->lieu_deces}}
+            @else
+            .......................................................
+            @endif
             <br><br>
             Certifie le présent extrait conforme aux indications portées au registre.
         </div>

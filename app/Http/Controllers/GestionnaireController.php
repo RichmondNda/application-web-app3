@@ -201,19 +201,41 @@ class GestionnaireController extends BaseController
 
 
         // PARTIE MARIAGE
+        
+        if($registre->date_mariage)
+        {
+            $date = explode("-", $registre->date_mariage);
 
 
-        $date = explode("-", $registre->date_mariage);
+            $heure_finale_mariage = $f->format(intval($date[2])) . ' ' . $this->getStringMonth(intval($date[1])) . ' ' . $f->format($date[0]);
 
+            //    dd($date_finale, $heure_finale_mariage);
 
-        $heure_finale_mariage = $f->format(intval($date[2])) . ' ' . $this->getStringMonth(intval($date[1])) . ' ' . $f->format($date[0]);
-
-        //    dd($date_finale, $heure_finale_mariage);
-
-        $registre->date_mariage = $heure_finale_mariage;
+            $registre->date_mariage = $heure_finale_mariage;
+        }
+        
 
 
         // FIN DE LA PARTIE DE MARIAGE 
+
+
+        // PARTIE DECES
+
+        if($registre->date_deces)
+        {
+             $date_dec = explode("-", $registre->date_deces);
+
+
+            $heure_finale_mariage = $f->format(intval($date_dec[2])) . ' ' . $this->getStringMonth(intval($date_dec[1])) . ' ' . $f->format($date_dec[0]);
+
+            //    dd($date_finale, $heure_finale_mariage);
+
+            $registre->date_deces = $heure_finale_mariage;
+        }
+
+       
+
+        // FIN DE LA PARTIE DECES 
 
 
         $registre->lieu_naissance = $lieu_naissance[count($lieu_naissance) - 1];
