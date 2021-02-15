@@ -34,6 +34,12 @@ Route::get('/liste-RegitresNaissance', 'App\Http\Controllers\GestionnaireControl
 
 
 Route::post('/enr-nouveau-dece', 'App\Http\Controllers\DécèController@EnNouveauDeces');
+
+
+## MARIAGE 
+
+Route::post('/mariage', 'App\Http\Controllers\MariageController@mariage' );
+
 // Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
     
 // });

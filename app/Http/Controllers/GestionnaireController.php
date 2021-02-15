@@ -175,6 +175,8 @@ class GestionnaireController extends BaseController
             'numero_acte' => $num_acte
         ])->first();
 
+        // PARTIE DATE DE NAISSANCE 
+
         $heure = explode(":", $registre->heure_de_naissance);
 
         $f = new NumberFormatter("fr", NumberFormatter::SPELLOUT);
@@ -193,6 +195,26 @@ class GestionnaireController extends BaseController
 
         $lieu_naissance =  explode(" ", $registre->lieu_naissance);
         // dd($lieu_naissance[count($lieu_naissance)-1]);
+
+
+        // FIN DE LA PARTIE DATE NAISSANCE 
+
+
+        // PARTIE MARIAGE
+
+
+        $date = explode("-", $registre->date_mariage);
+
+
+        $heure_finale_mariage = $f->format(intval($date[2])) . ' ' . $this->getStringMonth(intval($date[1])) . ' ' . $f->format($date[0]);
+
+        //    dd($date_finale, $heure_finale_mariage);
+
+        $registre->date_mariage = $heure_finale_mariage;
+
+
+        // FIN DE LA PARTIE DE MARIAGE 
+
 
         $registre->lieu_naissance = $lieu_naissance[count($lieu_naissance) - 1];
 
