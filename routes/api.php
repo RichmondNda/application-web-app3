@@ -40,6 +40,9 @@ Route::post('/enr-nouveau-dece', 'App\Http\Controllers\DécèController@EnNouvea
 
 Route::post('/mariage', 'App\Http\Controllers\MariageController@mariage' );
 
+## STATISQTIQUES
+Route::get('/statistiques', 'App\Http\Controllers\StatController@statistiques');
+
 // Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
     
 // });

@@ -66,3 +66,7 @@ ROute::get('AdminPdf/{code}/{numacte}/{date}', 'App\Http\Controllers\Administrat
 
 Route::get('Signature', 'App\Http\Controllers\SignatureController@signature');
 Route::post('ok-signature', 'App\Http\Controllers\SignatureController@ok_signature');
+
+
+//  STATISTIQUES
+

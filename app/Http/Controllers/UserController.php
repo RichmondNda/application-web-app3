@@ -312,7 +312,8 @@ class UserController extends Controller
 
     public function set_lettre_id($mes_lettres, $lettre, $key)
     {
-        $mes_chiffres = [15, 17, 14, 12, 18, 13, 19, 1, 7, 11];
+        //  on a remplace le 19 par 9 
+        $mes_chiffres = [15, 17, 14, 12, 18, 13, 9, 1, 7, 11];
 
         $ma_lettre = mb_strtolower($lettre);
         // $mes_lettres = "abcdefghijklmnopqrstuvwxyz";
@@ -343,6 +344,8 @@ class UserController extends Controller
 
             $index = $chiffre_index + $key;
 
+            /// ici pour le debugage on passe strictement superieur a superieur ou egale 
+            //  pour le moment ca passe 
             if ($index > 26) {
                 $index = $index - 26;
             }
@@ -415,8 +418,8 @@ class UserController extends Controller
 
     public function get_chiffre_id($mes_lettres, $lettre, $key)
     {
-
-        $mes_chiffres = [15, 17, 14, 12, 18, 13, 19, 1, 7, 11];
+        //  on remplace le 19 par 9 
+        $mes_chiffres = [15, 17, 14, 12, 18, 13, 9, 1, 7, 11];
 
         $ma_lettre = mb_strtolower($lettre);
         // $mes_lettres = "abcdefghijklmnopqrstuvwxyz";

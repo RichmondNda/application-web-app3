@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="col-span-3 p-6">é
+        <div class="col-span-3 p-6">
             <div class="p-6 m-12 bg-white shadow-md rounded-xl  transform rotate-1">
 
                 <div class="m-2 mb-4 bg-red-100 px-2 py-4 rounded-sm text-center" v-if="$page.props.flash.error">
